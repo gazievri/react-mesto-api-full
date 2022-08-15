@@ -1,0 +1,35 @@
+.authenticationForm__inputs {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #CCCCCC;
+  border: 0;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(204, 204, 204, 1);
+  margin-bottom: 30px;
+  background: none;
+  padding: 0;
+}
+
+.authenticationForm__inputs:-webkit-autofill,
+.authenticationForm__inputs:-webkit-autofill:hover,
+.authenticationForm__inputs:-webkit-autofill:focus
+.authenticationForm__inputs:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 0;
+  border-bottom: 2px solid rgba(204, 204, 204, 1);
+  -webkit-text-fill-color: #CCCCCC;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);
+}
