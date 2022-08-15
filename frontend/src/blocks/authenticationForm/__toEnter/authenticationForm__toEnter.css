@@ -1,0 +1,15 @@
+.authenticationForm__toEnter {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+@media (max-width: 320px) {
+  .authenticationForm__toEnter {
+    margin: 20px 0 0 0;
+  }
+}
