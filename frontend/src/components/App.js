@@ -148,11 +148,13 @@ function App() {
     .then(data => {
       console.log(data);
       if(data.token) {
+        console.log('!!!')
         localStorage.setItem('jwt', data.token);
         setLoggedIn(true);
         setEmail(email);
         history.push('/');
       }
+      console.log('111')
     })
     .catch(err => {
       console.log(err);
