@@ -15,7 +15,7 @@ const { PORT = 3000 } = process.env;
 const app = express();
 
 const corsOptions = {
-  origin: 'http://gazievri.mesto.nomoredomains.sbs/',
+  origin: 'http://gazievri.mesto.nomoredomains.sbs',
   optionsSuccessStatus: 200,
 };
 
