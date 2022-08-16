@@ -14,6 +14,8 @@ const { PORT = 3000 } = process.env;
 
 const app = express();
 
+app.use(cors());
+
 app.use(cookieParser());
 
 app.use(bodyParser.json());
@@ -25,11 +27,20 @@ mongoose.connect('mongodb://127.0.0.1/mestodb', {
 
 app.use(requestLogger); // подключаем логгер запросов
 
-app.use(routerUsers);
-app.use(routerCards);
+app.use(routerUsers, (req, res, next) => {
+  res.json({ msg: 'This is CORS-enabled for all origins!' });
+});
+
+app.use(routerCards, (req, res, next) => {
+  res.json({ msg: 'This is CORS-enabled for all origins!' });
+});
 
 app.all('/*', () => {
   throw new NotFoundError('Requested path not found');
+});
+
+app.listen(80, () => {
+  console.log('CORS-enabled web server listening on port 80');
 });
 
 app.use(errorLogger); // подключаем логгер ошибок
