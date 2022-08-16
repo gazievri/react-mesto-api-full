@@ -164,8 +164,8 @@ function App() {
   }
 
   function tokenCheck() {
-    let jwt = localStorage.getItem('jwt');
-    if (jwt) {
+   // let jwt = localStorage.getItem('jwt');
+   // if (jwt) {
       authApi.getContent(jwt)
       .then(res => {
         if(res.data._id) {
@@ -175,7 +175,7 @@ function App() {
         }
       })
       .catch(err => console.log(err));
-    }
+    //}
   }
 
   function handleLogout() {
