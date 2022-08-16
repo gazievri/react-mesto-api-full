@@ -27,8 +27,13 @@ app.use(requestLogger); // подключаем логгер запросов
 
 app.use(cors());
 
-app.use(routerUsers);
-app.use(routerCards);
+app.use(routerUsers, function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+);
+
+app.use(routerCards, function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+);
 
 app.all('/*', () => {
   throw new NotFoundError('Requested path not found');
