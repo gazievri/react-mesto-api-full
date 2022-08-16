@@ -15,4 +15,5 @@ const cors = (req, res, next) => {
 
 module.exports = {
   cors,
+  allowedCors,
 };

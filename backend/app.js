@@ -9,12 +9,13 @@ const routerCards = require('./routes/cards');
 const NotFoundError = require('./errors/not-found-errors');
 const { handleError } = require('./utils/handleError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { allowedCors } = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 
 const app = express();
 
-app.use(cors());
+app.use(cors(allowedCors));
 
 app.use(cookieParser());
 
