@@ -34,6 +34,10 @@ app.all('/*', () => {
   throw new NotFoundError('Requested path not found');
 });
 
+app.listen(80, function () {
+  console.log('CORS-enabled web server listening on port 80');
+});
+
 app.use(errorLogger); // подключаем логгер ошибок
 
 app.use(errors());
