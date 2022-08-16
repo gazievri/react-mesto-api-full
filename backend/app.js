@@ -17,6 +17,7 @@ const app = express();
 const corsOptions = {
   origin: 'http://gazievri.mesto.nomoredomains.sbs',
   optionsSuccessStatus: 200,
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
