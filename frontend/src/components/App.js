@@ -132,6 +132,7 @@ function App() {
   function handleRegister(email, password) {
     authApi.register(email, password)
     .then(data => {
+      console.log(data);
       if (data.data._id || data.data.email) {
         setIsRegisterSucceed(true);
       }
