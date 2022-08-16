@@ -146,6 +146,7 @@ function App() {
   function handleLogin(email, password) {
     authApi.login(email, password)
     .then(data => {
+      console.log(data);
       if(data.token) {
         localStorage.setItem('jwt', data.token);
         setLoggedIn(true);
