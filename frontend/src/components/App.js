@@ -147,9 +147,9 @@ function App() {
     authApi.login(email, password)
     .then(data => {
       console.log(data);
-      if(data.token) {
+      if(data.message === 'Athorization successful') {
         console.log('!!!')
-        localStorage.setItem('jwt', data.token);
+        //localStorage.setItem('jwt', data.token);
         setLoggedIn(true);
         setEmail(email);
         history.push('/');
