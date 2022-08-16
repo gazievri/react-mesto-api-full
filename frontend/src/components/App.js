@@ -58,7 +58,7 @@ function App() {
   }, [loggedIn]);
 
   function handleClickMenuLink() {
-    isLoginForm ? history.push('/sign-up') : history.push('/sign-in');
+    isLoginForm ? history.push('/signup') : history.push('/signin');
   }
 
   function handleClickDeleteCard() {
@@ -87,7 +87,7 @@ function App() {
 
   function handleClickTooltipPopupClose() {
     setIsRegisterResultPopupOpen(false);
-    if (isRegisterSucceed) {history.push('/sign-in')}
+    if (isRegisterSucceed) {history.push('/signin')}
   }
 
   function handleUpdateUser(data) {
@@ -180,7 +180,7 @@ function App() {
     setEmail('');
     setLoggedIn(false);
     setIsMobileMenuOpen(false);
-    history.push('/sign-in');
+    history.push('/signin');
     setIsMobileMenuOpen(false)
   }
 
@@ -218,14 +218,14 @@ function App() {
                   onCardDelete={handleClickDeleteCard}
                   cardForDelete={setSelectedCardForDelete}
                 />
-              <Route path="/sign-in">
+              <Route path="/signin">
                 <Login handleLogin={handleLogin} setIsLoginForm={setIsLoginForm} />
               </Route>
-              <Route path="/sign-up">
+              <Route path="/signup">
                 <Register handleRegister={handleRegister} setIsLoginForm={setIsLoginForm} />
               </Route>
               <Route path="*">
-                {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
+                {loggedIn ? <Redirect to="/" /> : <Redirect to="/signin" />}
               </Route>
             </Switch>
             <Footer />
