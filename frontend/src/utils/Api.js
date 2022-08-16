@@ -7,6 +7,7 @@ export default class Api {
   getInfo() {
     return fetch(`${this._url}users/me`, {
       method: 'GET',
+      credentials: 'include',
       headers: this._headers
     })
     .then(this._checkResponse);
@@ -15,6 +16,7 @@ export default class Api {
   getCards() {
     return fetch(`${this._url}cards`, {
       method: 'GET',
+      credentials: 'include',
       headers: this._headers
     })
     .then(this._checkResponse);
