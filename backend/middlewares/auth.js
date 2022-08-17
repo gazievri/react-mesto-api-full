@@ -8,6 +8,8 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 module.exports = (req, res, next) => {
   const { authorization } = req.cookies;
 
+  console.log(authorization);
+
   if (!authorization) {
     throw new UnauthorizedError('Authorization is needed');
   }
