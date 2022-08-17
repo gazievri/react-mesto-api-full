@@ -146,15 +146,12 @@ function App() {
   function handleLogin(email, password) {
     authApi.login(email, password)
     .then(data => {
-      console.log(data);
       if(data.message === 'Athorization successful') {
-        console.log('!!!')
         localStorage.setItem('jwt', data.token);
         setLoggedIn(true);
         setEmail(email);
         history.push('/');
       }
-      console.log('111')
     })
     .catch(err => {
       console.log(err);
