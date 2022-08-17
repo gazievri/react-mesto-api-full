@@ -28,7 +28,6 @@ export const login = (email, password) => {
 export const getContent = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
-    credentials: 'include',
     headers: {
       "Content-Type": "application/json",
       "authorization" : `Bearer ${token}`

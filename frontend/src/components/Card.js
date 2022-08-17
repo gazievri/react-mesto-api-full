@@ -8,7 +8,6 @@ const Card = ({
   onCardDelete,
   cardForDelete,
 }) => {
-  console.log(card);
   const currentUser = React.useContext(CurrentUserContext);
   const isOwn = card.owner._id === currentUser._id;
   const cardDeleteButtonClassName = `element__bin ${
