@@ -11,9 +11,6 @@ const {
 module.exports.getAllCards = (req, res, next) => {
   Card.find({})
     .then((cards) => res.status(STATUS_OK).send({ data: cards }))
-    .catch((err) => {
-      throw err;
-    })
     .catch(next);
 };
 
@@ -45,7 +42,13 @@ module.exports.deleteCardById = (req, res, next) => {
     .then(() => {
       res.status(STATUS_OK).send({ message: `Card ${cardId} has been removed` });
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'CastError') {
+        next(new BadRequestError('Card ID is incorrect'));
+        return;
+      }
+      next(err);
+    });
 };
 
 module.exports.likeCard = (req, res, next) => Card.findByIdAndUpdate(
