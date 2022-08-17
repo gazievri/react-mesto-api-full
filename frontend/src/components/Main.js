@@ -47,7 +47,7 @@ const Main = ({
         />
       </section>
       <section className="elements">
-        { !cards ? <h2>Card list is empty</h2> :
+        { cards.length===0 ? <h2>Card list is empty</h2> :
         cards.map((item) => {
           return (
             <Card
