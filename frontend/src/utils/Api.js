@@ -75,6 +75,7 @@ export default class Api {
     if (res.ok) {
         console.log(res.json());
         const info = res.json();
+        console.log(info.data)
         return info.data;
     }
     return Promise.reject(`Error: ${res.status}`)
