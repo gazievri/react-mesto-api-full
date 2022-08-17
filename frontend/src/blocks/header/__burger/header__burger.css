@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
   .header__burger {
     display: block;
     margin-left: auto;
