@@ -43,7 +43,7 @@ function App() {
     if (loggedIn) {
       api.getInfo()
       .then(res => {
-        getUserInfo(res);
+        getUserInfo(res.data);
       })
       .catch(err => console.log(err));
     }
@@ -52,7 +52,7 @@ function App() {
   React.useEffect(() => {
     if (loggedIn) {
       api.getCards()
-      .then(resolve => setDataCards(resolve))
+      .then(resolve => setDataCards(resolve.data))
       .catch(err => console.log(err));
     }
   }, [loggedIn]);
@@ -92,14 +92,14 @@ function App() {
 
   function handleUpdateUser(data) {
     api.sendNewProfileData(data)
-    .then(res => getUserInfo(res))
+    .then(res => getUserInfo(res.data))
     .catch(err => console.log(err));
     closeAllPopups();
   }
 
   function handleUpdateAvatar(data) {
     api.changeAvatar(data)
-    .then(res => getUserInfo(res))
+    .then(res => getUserInfo(res.data))
     .catch(err => console.log(err));
     closeAllPopups();
   }
@@ -124,7 +124,7 @@ function App() {
 
   function handleAddPlaceSubmit(data) {
     api.sendNewCardData(data)
-    .then(newCard => setDataCards([newCard, ...cards]))
+    .then(newCard => setDataCards([newCard.data, ...cards]))
     .catch(err => console.log(err));
     closeAllPopups();
   }

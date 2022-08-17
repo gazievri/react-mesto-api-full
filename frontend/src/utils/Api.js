@@ -73,8 +73,7 @@ export default class Api {
 
   _checkResponse(res) {
     if (res.ok) {
-      const data = res.json();
-      return data.data;
+      return res.json();
     }
     return Promise.reject(`Error: ${res.status}`)
   }
