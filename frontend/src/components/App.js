@@ -52,7 +52,7 @@ function App() {
   React.useEffect(() => {
     if (loggedIn) {
       api.getCards()
-      .then(resolve => setDataCards(resolve))
+      .then(resolve => { console.log(resolve); setDataCards(resolve)})
       .catch(err => console.log(err));
     }
   }, [loggedIn]);
