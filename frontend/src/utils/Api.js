@@ -82,7 +82,7 @@ export default class Api {
 export const api = new Api ({
   baseUrl: 'http://api.gazievri.mesto.nomoredomains.sbs/',
   headers: {
-    authorization: '6f7d4ee2-1133-493f-8dc5-cde7a586dd12',
+    //authorization: '6f7d4ee2-1133-493f-8dc5-cde7a586dd12',
     'Content-Type': 'application/json'
   }
 });
