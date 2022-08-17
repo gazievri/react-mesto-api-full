@@ -149,7 +149,7 @@ function App() {
       console.log(data);
       if(data.message === 'Athorization successful') {
         console.log('!!!')
-        //localStorage.setItem('jwt', data.token);
+        localStorage.setItem('jwt', data.token);
         setLoggedIn(true);
         setEmail(email);
         history.push('/');
@@ -164,9 +164,9 @@ function App() {
   }
 
   function tokenCheck() {
-  //  let jwt = localStorage.getItem('jwt');
-  //  if (jwt) {
-      authApi.getContent()
+   let jwt = localStorage.getItem('jwt');
+   if (jwt) {
+      authApi.getContent(jwt)
       .then(res => {
         if(res.data._id) {
           setEmail(res.data.email);
@@ -175,7 +175,7 @@ function App() {
         }
       })
       .catch(err => console.log(err));
-    // }
+    }
   }
 
   function handleLogout() {
