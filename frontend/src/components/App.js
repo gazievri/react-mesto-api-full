@@ -52,7 +52,7 @@ function App() {
   React.useEffect(() => {
     if (loggedIn) {
       api.getCards()
-      .then(resolve => setDataCards(resolve.data))
+      .then(resolve => setDataCards(resolve))
       .catch(err => console.log(err));
     }
   }, [loggedIn]);
@@ -124,7 +124,7 @@ function App() {
 
   function handleAddPlaceSubmit(data) {
     api.sendNewCardData(data)
-    .then(newCard => setDataCards([newCard.data, ...cards]))
+    .then(newCard => setDataCards([newCard, ...cards]))
     .catch(err => console.log(err));
     closeAllPopups();
   }
