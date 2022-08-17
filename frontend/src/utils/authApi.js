@@ -1,4 +1,4 @@
-export const BASE_URL = "http://api.gazievri.mesto.nomoredomains.sbs";
+export const BASE_URL = "https://api.gazievri.mesto.nomoredomains.sbs";
 
 export function checkResponse(response) {
   return response.ok ? response.json() : Promise.reject(`Ошибка ${response.status}`)

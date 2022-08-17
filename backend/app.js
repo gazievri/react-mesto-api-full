@@ -14,12 +14,6 @@ const { PORT = 3000 } = process.env;
 
 const app = express();
 
-// const corsOptions = {
-//   origin: 'http://gazievri.mesto.nomoredomains.sbs',
-//   optionsSuccessStatus: 200,
-//   credentials: true,
-// };
-
 app.use(cors());
 
 app.use(cookieParser());
@@ -32,6 +26,14 @@ mongoose.connect('mongodb://127.0.0.1/mestodb', {
 });
 
 app.use(requestLogger); // подключаем логгер запросов
+
+// Удалить после ревью
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.use(routerUsers);
 
