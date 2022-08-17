@@ -43,7 +43,7 @@ function App() {
     if (loggedIn) {
       api.getInfo()
       .then(res => {
-        getUserInfo(res.data);
+        getUserInfo(res);
       })
       .catch(err => console.log(err));
     }
