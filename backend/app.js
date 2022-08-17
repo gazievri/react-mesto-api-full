@@ -15,7 +15,7 @@ const { PORT = 3000 } = process.env;
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:3001/',
+  origin: 'http://gazievri.mesto.nomoredomains.sbs',
   optionsSuccessStatus: 200,
   credentials: true,
 };
