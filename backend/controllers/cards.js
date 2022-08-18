@@ -10,7 +10,7 @@ const {
 
 module.exports.getAllCards = (req, res, next) => {
   Card.find({})
-    .then((cards) => res.status(STATUS_OK).send({ data: cards }))
+    .then((cards) => res.status(STATUS_OK).send({ data: cards.reverse() }))
     .catch(next);
 };
 
