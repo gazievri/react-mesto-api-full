@@ -18,7 +18,7 @@ routerUsers.get('/users', auth, getAllUsers);
 routerUsers.get('/users/me', auth, getUserInfo);
 
 routerUsers.get('/signout', (req, res) => {
-  res.clearCookie('jwt').send({ message: 'Logout is successful' });
+  res.clearCookie('authorization').send({ message: 'Signout is successful' });
 }, auth);
 
 routerUsers.get('/users/:userId', celebrate({
