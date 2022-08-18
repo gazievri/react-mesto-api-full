@@ -17,6 +17,10 @@ routerUsers.get('/users', auth, getAllUsers);
 
 routerUsers.get('/users/me', auth, getUserInfo);
 
+routerUsers.get('/signout', (req, res) => {
+  res.clearCookie('jwt').send({ message: 'Logout is successful' });
+}, auth);
+
 routerUsers.get('/users/:userId', celebrate({
   params: Joi.object().keys({
     userId: Joi.string().custom(validateId, 'ObjectId validation'),
