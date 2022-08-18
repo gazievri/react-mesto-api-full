@@ -79,12 +79,12 @@ export default class Api {
   }
 }
 
-let token = localStorage.getItem('jwt');
+//let token = localStorage.getItem('jwt');
 
 export const api = new Api ({
   baseUrl: 'https://api.gazievri.mesto.nomoredomains.sbs/',
   headers: {
-    "authorization" : `Bearer ${token}`,
+   // "authorization" : `Bearer ${token}`,
     'Content-Type': 'application/json'
   }
 });
