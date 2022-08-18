@@ -19,7 +19,7 @@ module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
 
   Card.create({ name, link, owner })
-    .then((cards) => res.status(STATUS_CREATED).send({ data: cards }))
+    .then((cards) => res.status(STATUS_CREATED).send({ data: cards.reverse() }))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         next(new BadRequestError('Inccorrect data passed during user creation'));
