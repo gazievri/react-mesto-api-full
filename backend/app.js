@@ -9,18 +9,13 @@ const routerCards = require('./routes/cards');
 const NotFoundError = require('./errors/not-found-errors');
 const { handleError } = require('./utils/handleError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { corsOptions } = require('./utils/corsOptions');
 
 require('dotenv').config();
 
 const { PORT = 3000 } = process.env;
 
 const app = express();
-
-const corsOptions = {
-  origin: 'https://gazievri.mesto.nomoredomains.sbs',
-  credentials: true,
-  optionsSuccessStatus: 200,
-};
 
 app.use(cors(corsOptions));
 

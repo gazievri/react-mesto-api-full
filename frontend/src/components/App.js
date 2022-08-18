@@ -161,22 +161,18 @@ function App() {
   }
 
   function tokenCheck() {
-   // let jwt = localStorage.getItem('jwt');
-   //if (jwt) {
-      authApi.getContent()
-      .then(res => {
-        if(res.data._id) {
-          setEmail(res.data.email);
-          setLoggedIn(true);
-          history.push('/');
-        }
-      })
-      .catch(err => console.log(err));
-   // }
+    authApi.getContent()
+    .then(res => {
+      if(res.data._id) {
+        setEmail(res.data.email);
+        setLoggedIn(true);
+        history.push('/');
+      }
+    })
+    .catch(err => console.log(err));
   }
 
   function handleLogout() {
-    //localStorage.removeItem('jwt');
     authApi.logout()
     .then(() => {
       setEmail('');
