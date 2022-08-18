@@ -176,12 +176,16 @@ function App() {
   }
 
   function handleLogout() {
-    localStorage.removeItem('jwt');
-    setEmail('');
-    setLoggedIn(false);
-    setIsMobileMenuOpen(false);
-    history.push('/signin');
-    setIsMobileMenuOpen(false)
+    //localStorage.removeItem('jwt');
+    authApi.logout()
+    .then(() => {
+      setEmail('');
+      setLoggedIn(false);
+      setIsMobileMenuOpen(false);
+      history.push('/signin');
+      setIsMobileMenuOpen(false)
+    })
+    .catch(err => console.log(err));
   }
 
   function handleClickOpenMobileMenu() {

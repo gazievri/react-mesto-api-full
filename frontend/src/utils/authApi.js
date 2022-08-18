@@ -27,6 +27,7 @@ export const login = (email, password) => {
   })
   .then(checkResponse);
 }
+
 export const getContent = () => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
@@ -39,7 +40,16 @@ export const getContent = () => {
   .then(checkResponse);
 }
 
-
+export const logout = () => {
+  return fetch(`${BASE_URL}/signout`, {
+    method: "GET",
+    credentials: 'include',
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(checkResponse);
+}
 
 
 
